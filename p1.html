@@ -1,0 +1,577 @@
+<html>
+<head>
+    <title>try</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            flex-wrap: wrap;
+            display: flex;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-position: top;
+        }
+        .bar{
+            text-align: center;
+            margin-left: 20%;
+            width: 60%;
+            height: 13vh;
+            background-color: rgba(27,31,34,0.9);
+        }
+        .travel{
+            position: absolute;
+            width: 20%;
+            text-align: center;
+            font-size: 40px;
+            top: 3.5%;
+            left: 40%;
+            text-shadow: 1px 1px 5px white;
+        }
+        .bar1{
+            position: absolute;
+            top: 0vh;
+            left: 0%;
+            width: 9%;
+            height: 6vh;
+            background-color: transparent;;
+            border-bottom: 3.5vh rgba(27,31,34,0.9) solid;
+            border-top:3.5vh rgba(27,31,34,0.9) solid;
+            border-left:11vw rgba(27,31,34,0.9) solid;
+        }
+        .bar2{
+            position: absolute;
+            top: 0vh;
+            right: 0%;
+            width: 9%;
+            height: 6vh;
+            background-color: transparent;;
+            border-bottom: 3.5vh rgba(27,31,34,0.9) solid;
+            border-top:3.5vh rgba(27,31,34,0.9) solid;
+            border-right:11vw rgba(27,31,34,0.9) solid;
+        }
+        .bar3{
+            position: absolute;
+            top: 0%;
+            width: 100%;
+            height: 13vh;
+            background-color: transparent;
+            box-shadow: 1px 1px 50px black;
+        }
+        .btn{
+            color: white;
+            font-size: 25px;
+            background-color: rgba(27,31,34,0.45);
+            width: 9%;
+            height:6vh;
+            position: absolute;
+            top: 3.5%;
+            border: 1px solid white;
+        }
+        #btn1{
+            left: 11%;
+        }
+        #btn2{
+            right: 11%;
+        }
+        .box1{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 47.5%;
+            width: 5%;
+            height: 10%;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 3px solid black;
+            box-shadow: 2px px 30px black;
+            transition: all 8s;
+            z-index: 9;
+        }
+        .box1:hover{
+            position: absolute;
+            top: 25%;
+            left: 32.5%;
+            width: 35%;
+            height: 60%;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 1px solid black;
+            box-shadow: 1px 1px 30px black;
+        }
+        .title{
+            opacity: 0;
+            position: absolute;
+            top: -16%;
+            width:100%;
+            height: 100%;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 3px solid black;
+            box-shadow: 1px 1px 30px black;
+            transition: all 8s;
+            
+        }
+        .word{
+            font-size: 50px;
+            text-align: center;
+            opacity: 0;
+            position: absolute;
+            width:100%;
+            height: 100%;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 1px solid black;
+            box-shadow: 1px 1px 30px black;
+            text-shadow: 1px 1px 5px white;
+            transition: all 8s;
+        }
+        .box1:hover .title{
+            position: absolute;
+            top: -16%;
+            width: 100%;
+            height: 60px;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 1px solid black;
+            box-shadow: 1px 1px 30px black;
+            display: block;
+            transition: all 6s;
+            opacity: 1;
+        }
+        .box1:hover .word{
+            opacity: 1;
+        }
+        .h2{
+            position: absolute;
+            width: 40%;
+            top:2%;
+            left: 30%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h2{
+            font-size: 40px;
+            opacity: 1;
+        }
+        .ch{
+            position: absolute;
+            width: 30%;
+            top:35%;
+            left: 35%;
+            text-align: center;
+            font-size: 0px;
+            color: black;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: block;
+        }
+        .ch{
+            position: absolute;
+            width: 30%;
+            top:35%;
+            left: 35%;
+            text-align: center;
+            font-size: 0px;
+            color: black;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: block;
+        }
+        .box1:hover .ch{
+            font-size: 40px;
+            opacity: 1;
+        }
+        .h3{
+            position: absolute;
+            width: 30%;
+            top:15%;
+            left: 35%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h3{
+            font-size: 30px;
+            opacity: 1;
+        }
+        .txt1{
+            font-size: 20px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 27%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: rgba(27,31,34,0.6);
+            color: white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .txt1{
+            left: 20%;
+            width: 60%;
+            height:10%;
+            opacity: 1;
+        }
+        .h4{
+            position: absolute;
+            width: 30%;
+            top:40%;
+            left: 35%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h4{
+            font-size: 30px;
+            opacity: 1;
+        }
+        .txt2{
+            font-size: 20px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 52%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: rgba(27,31,34,0.6);
+            color: white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .txt2{
+            left: 20%;
+            width: 60%;
+            height:10%;
+            opacity: 1;
+        }
+        .btn3{
+            font-size: 0px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 71%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: transparent;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .btn3{
+            font-size: 35px;
+            left: 30%;
+            width: 40%;
+            height:15%;
+            opacity: 1;
+        }
+        
+        .h5{
+            position: absolute;
+            width: 40%;
+            top:1%;
+            left: 30%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h5{
+            font-size: 40px;
+            opacity: 1;
+        }
+        .h6{
+            position: absolute;
+            width: 45%;
+            top:13%;
+            left: 27.5%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h6{
+            font-size: 30px;
+            opacity: 1;
+        }
+        .txt3{
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 23%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: rgba(27,31,34,0.6);
+            color: white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .txt3{
+            left: 20%;
+            width: 60%;
+            height:8%;
+            opacity: 1;
+        }
+        .h7{
+            position: absolute;
+            width: 45%;
+            top:33%;
+            left: 27.5%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h7{
+            font-size: 30px;
+            opacity: 1;
+        }
+        .txt4{
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 43%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: rgba(27,31,34,0.6);
+            color: white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .txt4{
+            left: 20%;
+            width: 60%;
+            height:8%;
+            opacity: 1;
+        }
+        .h8{
+            position: absolute;
+            width: 45%;
+            top:53%;
+            left: 27.5%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h8{
+            font-size: 30px;
+            opacity: 1;
+        }
+        .txt5{
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 63%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: rgba(27,31,34,0.6);
+            color: white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .txt5{
+            left: 20%;
+            width: 60%;
+            height:8%;
+            opacity: 1;
+        }
+        .h9{
+            position: absolute;
+            width: 45%;
+            top:73%;
+            left: 27.5%;
+            text-align: center;
+            font-size: 0px;
+            opacity: 0;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .h9{
+            font-size: 30px;
+            opacity: 1;
+        }
+        .txt6{
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 83%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: rgba(27,31,34,0.6);
+            color: white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .txt6{
+            left: 20%;
+            width: 60%;
+            height:8%;
+            opacity: 1;
+        }
+        .btn4{
+            font-size: 0px;
+            position: absolute;
+            width: 0%;
+            height:0%;
+            left: 50%;
+            top: 93%;
+            opacity: 0;
+            border-radius: 15px;
+            background-color: transparent;
+            text-shadow: 1px 1px 5px white;
+            transition-timing-function: ease-in-out;
+            transition: all 4s;
+            display: none;
+        }
+        .box1:hover .btn4{
+            font-size: 20px;
+            left: 40%;
+            width: 20%;
+            height:6%;
+            opacity: 1;
+        }
+        .end{
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            height: 10vh;
+            background-color: rgba(27,31,34,0.6);
+            box-shadow: 1px 1px 10px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="bar"><h1 class="travel">travel co.</h1></div>
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <button class="btn" id="btn1" onclick="btn1()">sign in</button>
+        <button class="btn" id="btn2" onclick="btn2()">sign up</button>
+        <div class="box1" id="box1">
+        <div class="title"><h1 class="word">hello sir</h1></div>
+            
+            <h1 class="ch" id="ch">please choose</h1>
+            
+        <h2 class="h2" id="h2">sign in</h2>
+        <h2 class="h3" id="h3">e-mail</h2>  
+        <input id="txt1" class="txt1" type="text" placeholder="enter your e-mail">
+        <h2 id="h4" class="h4">password</h2>
+        <input id="txt2" class="txt2" type="password" placeholder="enter your password">
+        <button id="btn3" class="btn3">enter</button>
+        
+        <h2 id="h5" class="h5">sign up</h2>
+        <h2 id="h6" class="h6">first-name</h2>  
+        <input id="txt3" class="txt3" type="text" placeholder="enter your first-name">
+        <h2 id="h7" class="h7">last-name</h2> 
+        <input id="txt4" class="txt4" type="text" placeholder="enter your last-name">
+        <h2 id="h8" class="h8">e-mail</h2> 
+        <input id="txt5" class="txt5" type="text" placeholder="enter your e-mail">
+        <h2 id="h9" class="h9">password</h2> 
+        <input id="txt6" class="txt6" type="password" placeholder="enter your password">
+        <button id="btn4" class="btn4">enter</button>
+        </div>
+        <div class="end"></div>
+    </div>
+    <script>
+        function btn1(){
+            document.getElementById("ch").style.display="none";
+            document.getElementById("h2").style.display="block";
+            document.getElementById("h3").style.display="block";
+            document.getElementById("h4").style.display="block";
+            document.getElementById("txt1").style.display="block";
+            document.getElementById("txt2").style.display="block";
+            document.getElementById("btn3").style.display="block";
+            
+            document.getElementById("h5").style.display="none";
+            document.getElementById("h6").style.display="none";
+            document.getElementById("h7").style.display="none";
+            document.getElementById("h8").style.display="none";
+            document.getElementById("h9").style.display="none";
+            document.getElementById("txt3").style.display="none";
+            document.getElementById("txt4").style.display="none";
+            document.getElementById("txt5").style.display="none";
+            document.getElementById("txt6").style.display="none";
+            document.getElementById("btn4").style.display="none";
+        }
+        function btn2(){
+            document.getElementById("ch").style.display="none";
+            document.getElementById("h2").style.display="none";
+            document.getElementById("h3").style.display="none";
+            document.getElementById("h4").style.display="none";
+            document.getElementById("txt1").style.display="none";
+            document.getElementById("txt2").style.display="none";
+            document.getElementById("btn3").style.display="none";
+            document.getElementById("h5").style.display="block";
+            document.getElementById("h6").style.display="block";
+            document.getElementById("h7").style.display="block";
+            document.getElementById("h8").style.display="block";
+            document.getElementById("h9").style.display="block";
+            document.getElementById("txt3").style.display="block";
+            document.getElementById("txt4").style.display="block";
+            document.getElementById("txt5").style.display="block";
+            document.getElementById("txt6").style.display="block";
+            document.getElementById("btn4").style.display="block";
+        }
+    </script>
+</body>
+</html>
